@@ -1,22 +1,28 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
-
 ## How it works
 
-Explain how your project works
-dsfsdfsdf
+This project implements a simple digital logic design for the Tiny Tapeout platform.
+The circuit processes input signals on each clock cycle and produces output values
+through the output pins.
+
+Inputs:
+- ui_in[] : control and data inputs
+- clk     : system clock
+- rst_n   : active-low reset
+
+Outputs:
+- uo_out[] : processed output signals
+
+The design operates synchronously with the clock. When reset is asserted,
+all internal states return to their default values.
 
 ## How to test
 
-Explain how to use your project
-asdasdsad
-## External hardware
+1. Apply a clock signal to the design.
+2. Drive input values through the ui_in pins.
+3. Observe output changes on uo_out.
+4. Assert rst_n low to reset the design.
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
-dsfsdfdfds
+Simulation can be executed with:
+
+```bash
+make test
